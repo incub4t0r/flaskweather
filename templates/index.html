@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta http-equiv="refresh" content="600"/>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" integrity="sha512-Fdq8QvrEd3TD4heN8gNTOl79sAZR7zsiHIDQbE5eEBxx8pPfb/yJHaBWxhoG7SNcQiBmrrUHlg5TiNX4ovt6Jg==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <div class="top" style="display: inline-block; padding-top: 4vw;">
+        <div class="left">
+            <span class="time" id="timebox"></span>
+        </div>
+        <div class="right" style="padding-top: 2vw;">
+            <div class="top">
+                <span class="date" id="daybox"></span>
+            </div>
+            <div class="bottom">
+                <span class="date" id="datebox"></span>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../static/clock.js"></script>
+
+    <div class="bottom">
+        <div class="left" style="text-align: right">
+            <i id="curr-weather-icon"></i>
+        </div>
+        <div class="right">
+            <div class="left">
+                <div class="tempmain" id="tempmain"></div>
+            </div>
+            <div class="right">
+                <div class="top" style="padding-top: 4vw;">
+                    <span class="tempminmax" id="tempmax"></span>
+                </div>
+                <div class="bottom" style="padding-top: 4vw;">
+                    <div class="tempminmax" id="tempmin"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../static/weatherballoon.js"></script>
+</body>
+
