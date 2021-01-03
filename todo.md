@@ -1,6 +1,10 @@
 # TODO & References
 
 ## TODO
+
+-change port the server runs on
+-how to make output quiet?
+
 ### URGENT
 Add the correct icons
 
