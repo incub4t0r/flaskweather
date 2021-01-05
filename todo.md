@@ -4,6 +4,8 @@
 
 - learn/use better js
 - add error message for bad zip codes
+- add favicon
+- improve the daily high/low updater
 
 ## TODO later
 **Add a news ticker**
@@ -25,8 +27,5 @@
 - https://stackoverflow.com/questions/55447599/how-to-send-data-in-flask-to-another-page
 - http://cssdemos.tupence.co.uk/button-styling.htm 
 - https://www.w3schools.com/css/css3_buttons.asp 
-
-
-
 - https://codepen.io/sorinr/pen/xOGdYz
 - https://codepen.io/karpimpski/pen/JXOLyY 

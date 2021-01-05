@@ -18,8 +18,9 @@ This is my first web app working with JavaScript, that displays weather data as 
 
 ## Where is it running?
 
-Currently, the webpage runs at 43y3s.pythonanywhere.com and is being displayed on a couple old tablets I have that cannot run anything more than the browser.
+Currently, the webpage runs at [43y3s.pythonanywhere.com](http://43y3s.pythonanywhere.com) and is being displayed on a couple old tablets I have that cannot run anything more than the browser.
 
 ## I want to run it!
 
 If you want to run this project, please change out the api keys for your own. 
+

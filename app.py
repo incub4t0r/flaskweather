@@ -5,15 +5,16 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def landing():
     if request.method == 'POST':
-        zipID = request.form.get('zipID')
-        return redirect(url_for('kiosk', zipID=zipID))
+        cityID = request.form.get('cityID')
+        return redirect(url_for('kiosk', cityID=cityID))
     return render_template('landing.html')
 
 @app.route('/kiosk')
 def kiosk():
-    zipID = request.args.get('zipID', None)
-    return render_template('index.html', zipID=zipID)
+    cityID = request.args.get('cityID', None)
+    return render_template('index.html', cityID=cityID)    
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
+
 
