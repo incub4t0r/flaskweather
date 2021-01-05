@@ -1,15 +1,16 @@
 const key = '1d51f32b7f1bdace2aa7b9a20cbabb66';
 if(key=='') document.getElementById('temp').innerHTML = ('Remember to add your api key!');
+var zipID = document.getElementById("zipID").getAttribute( "data_id" );
 
-function weatherBalloon( cityID ) {
-	fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key+"&units=imperial")  
-	.then(function(resp) { return resp.json() }) // Convert data to json
-	.then(function(data) {
-		parseWeather(data);
-	})
-	.catch(function() {
-		// catch any errors
-	});
+
+function weatherBalloon( zipID ) {
+    fetch('https://api.openweathermap.org/data/2.5/weather?zip=' + zipID+ '&appid=' + key+"&units=imperial")  
+    .then(function(resp) { return resp.json() }) // Convert data to json
+    .then(function(data) {
+        parseWeather(data);
+    })
+    .catch(function() {// catch any errors
+    });
 }
 
 function isDayOrNight(d) {
@@ -41,5 +42,5 @@ function updateHighLow(){
     // future function to update the high low only once per day
 }
 
-weatherBalloon( 5004062 );
+weatherBalloon( zipID );
 setInterval(weatherBalloon,1000*60*60);

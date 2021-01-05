@@ -2,37 +2,31 @@
 
 ## TODO
 
--change port the server runs on
--how to make output quiet?
+- learn/use better js
+- add error message for bad zip codes
 
-### URGENT
-Add the correct icons
-
-https://codepen.io/sorinr/pen/xOGdYz
-https://codepen.io/karpimpski/pen/JXOLyY 
-
-ened up using karpimpski but heavily modified, need to learn better js
-
-### WHEN THE TIME COMES
+## TODO later
 **Add a news ticker**
-https://codepen.io/Tenderfeel/pen/oPgqBv
+- https://codepen.io/Tenderfeel/pen/oPgqBv
 
 **Add time based messages?**
-EG. good morning, etc.
+- EG. good morning, etc.
 
 **Add animated weathericons**
-https://darkskyapp.github.io/skycons/
-https://github.com/maxdow/skycons
-https://codepen.io/sinapsis7/pen/XKvdzr
+- https://darkskyapp.github.io/skycons/
+- https://github.com/maxdow/skycons
+- https://codepen.io/sinapsis7/pen/XKvdzr
+- https://codepen.io/eevu/pen/NNQXZg
+- https://codepen.io/mattfroese/pen/WaeYQV
 
-
-var weatherIcon = document.getElementById("curr-weather-icon");
-weatherIcon.setAttribute("class", "wi wi-owm-" + isDayOrNight() + "-" + model.data.weatherID + "");
-
-https://codepen.io/eevu/pen/NNQXZg
-
-https://codepen.io/mattfroese/pen/WaeYQV
-https://api.openweathermap.org/data/2.5/weather?id=5004062&appid=1d51f32b7f1bdace2aa7b9a20cbabb66&units=imperial  
-https://api.openweathermap.org/data/2.5/forecast/daily?q=5004062&cnt=7&appid=1d51f32b7f1bdace2aa7b9a20cbabb66&units=imperial  
 
 ## References
+
+- https://stackoverflow.com/questions/55447599/how-to-send-data-in-flask-to-another-page
+- http://cssdemos.tupence.co.uk/button-styling.htm 
+- https://www.w3schools.com/css/css3_buttons.asp 
+
+
+
+- https://codepen.io/sorinr/pen/xOGdYz
+- https://codepen.io/karpimpski/pen/JXOLyY 
