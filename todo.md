@@ -6,6 +6,7 @@
 - add error message for bad zip codes
 - add favicon
 - improve the daily high/low updater
+- remove float: bottom, doesnt do anything
 
 ## TODO later
 **Add a news ticker**

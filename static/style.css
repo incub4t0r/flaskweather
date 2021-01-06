@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 body {
@@ -66,7 +68,6 @@ img {
 
 .bottom {
   /* background-color: lightblue; */
-  float: bottom;
   width: 100%;
   clear: both;
   text-align: center;
@@ -98,10 +99,12 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+  -moz-appearance:textfield; /* Firefox */
 }
 
 input{
+  border-radius: 0.3vw; 
+  border:none;
   font-size: 2vw;
   font-family: 'Rubik', sans-serif;
   text-align: center;
@@ -109,19 +112,14 @@ input{
 
 /*defines styles for buttons*/
 .button {
-  padding-left:8.7vw;
-  padding-right:8.7vw;
-  border: 2px solid #59b4ff;
   background-color: #59b4ff;
   transition-duration: 0.4s;
   color: black;
-  /* border-radius: 2vw; */
   font-family: 'Rubik', sans-serif;
-  /* font-size: 2vw; */
 }
+
 .button:hover {
   background-color: #0075c4;
-  border: 2px solid #0075c4;
   color: white;
 }
 
@@ -141,4 +139,22 @@ footer {
   right: 0;
   padding-bottom: 2vw;
   text-align: center;
+}
+
+logotext:hover span {
+  display: none
+}
+
+logotext:hover:before{
+  font-family: 'Nanum Gothic', sans-serif;
+  content: "맑아";
+} 
+
+.verticalcenter{
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */	
 }

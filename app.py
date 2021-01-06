@@ -12,7 +12,7 @@ def landing():
 @app.route('/kiosk')
 def kiosk():
     cityID = request.args.get('cityID', None)
-    return render_template('index.html', cityID=cityID)    
+    return render_template('index.html', cityID=cityID)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
