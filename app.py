@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def landing():
     if request.method == 'POST':
-        cityID = request.form.get('cityID')
+        cityID = str(request.form.get('cityID')).replace(" ","+")
         return redirect(url_for('kiosk', cityID=cityID))
     return render_template('landing.html')
 
