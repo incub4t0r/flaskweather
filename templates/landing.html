@@ -1,32 +1,36 @@
-<!DOCTYPE html>
-<meta http-equiv="refresh" content="600" name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE HTML>
 
-<head>
-    <link type="text/css" rel="stylesheet" href="../static/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" integrity="sha512-Fdq8QvrEd3TD4heN8gNTOl79sAZR7zsiHIDQbE5eEBxx8pPfb/yJHaBWxhoG7SNcQiBmrrUHlg5TiNX4ovt6Jg==" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-</head>
 
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width">
+        
+        <title>
+            malga
+        </title>
+        <link type="text/css" rel="stylesheet" href="/static/landing.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    </head>
+</html>
 <body>
-    <br>
-    <p style="font-size: 5vw; font-family: Rubik;">
-        <img class="logo"  src=https://raw.githubusercontent.com/erikflowers/weather-icons/master/svg/wi-day-sunny.svg >
-        <logotext style="padding-right: 1vw;"><span>malga</span></logotext>
-    </p>
-    <br>
-
-    <form class="verticalcenter" action="/" method="POST" style="text-align: center; width: 100%;">
-        <input style="margin: 0 auto; width: 25vw;"type="text" name="cityID" placeholder="enter city name" autocomplete="off" required>
-        <br>
-        <br>
-        <input  style="margin: 0 auto; width: 25vw"class="button" type="submit" value="submit">
+    <header id='mainHeader'>
+        <div id='responsiveLogo'>
+            <img src='/static/img/malgalogo.PNG' />
+        </div>
+    </header>
+    
+    <form class="verticalcenter" action="/" method="POST">
+        <div style="padding-bottom: 10px;">
+            <input type="text" name="cityID" placeholder="enter city name" autocomplete="off" required>
+        </div>
+        <input class="button" type="submit" value="submit">
     </form>
 </body>
 
-    
 <footer>
-    <p>author: 43y3s</p>
-    <a href="https://github.com/incub4t0r/flaskweather">source/github</a>
+    <p style="margin: 0;">author: 43y3s</p>
+    <a style="margin: 0;" href="https://github.com/incub4t0r/flaskweather">source/github</a>
 </footer>  
