@@ -40,7 +40,7 @@ window.onload = function(){
                 var tempmax = Math.round(data.daily[0].temp.max) + '&deg;';
                 document.getElementById('tempmin').innerHTML = tempmin;
                 document.getElementById('tempmax').innerHTML = tempmax;
-            });
+            }); 
         });
     }
 
