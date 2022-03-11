@@ -1,4 +1,3 @@
-// var tday=["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
 var tday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 var tmonth = ["Jan.","Feb.","Mar.","Apr.","May.","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."];
 
@@ -22,5 +21,5 @@ function clock(){
     document.getElementById('daybox').innerHTML=daytext;
     document.getElementById('datebox').innerHTML=datetext;
 }
-// clock();
+clock();
 setInterval(clock,1000);
