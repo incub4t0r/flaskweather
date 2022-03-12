@@ -60,19 +60,43 @@ footer {
     -ms-transform: translate(-50%, -50%); /* IE 9 */
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */	
 }
-form{
-    width: 50%;
+
+.verticalcenter .entry{
+    font-size:2vw;
+    padding-bottom:1vw;
 }
-input{
+
+.verticalcenter input{
     border-radius: 0.3vw; 
     border:none;
     color: black;
     text-align: center;
-    font-size: 16px;
+    font-size: 2vw;
     width:100%;
     padding: 5px;
     margin: 0;
 }
+
+form{
+    width: 50%;
+}
+/* button{
+    background-color: #59b4ff;
+    transition-duration: 0.4s;
+    border-radius: 0.3vw; 
+    border:none;
+    color: black;
+    text-align: center;
+    font-size: 2vw;
+    width:100%;
+    padding: 5px;
+    margin: 0;
+}
+
+button:hover{
+    background-color: #0075c4;
+    color: white;
+} */
 
 .button {
     background-color: #59b4ff;

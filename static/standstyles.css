@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+body {
+    background-color: #000000;
+}
+
+div {
+    /* background-color: lightsalmon; */
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    color: #ffffff;
+}
+
+
+i{
+    font-size: 17vw;
+    padding-top:4vw;
+    padding-right:5vw;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* defines classes for elements */
+.time {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 20vw;
+}
+
+.date {
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 8vw;
+}
+
+.left {
+    /* background-color: lightpink; */
+    float: left;
+    width: 50%;
+    text-align: center;
+
+}
+
+.right {
+    /* background-color: lightgreen; */
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+.bottom {
+    /* background-color: lightblue; */
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+.top {
+    /* background-color: lightskyblue; */
+    /* width: 100%; */
+    width:100%;
+    text-align: center;
+}
+
+.tempmain {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 20vw;
+}
+
+.tempminmax {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 5vw;
+}
+
+/*removes the spin wheel on numbers*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input{
+    border-radius: 0.3vw; 
+    border:none;
+    font-size: 2vw;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+/*defines styles for buttons*/
+.button {
+    background-color: #59b4ff;
+    transition-duration: 0.4s;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+}
+
+.button:hover {
+    background-color: #0075c4;
+    color: white;
+}
+
+/* defines style for logo */
+.logo{
+    filter: invert(100%);
+    width: 10%;
+}
+
+/* defines style for footer */
+footer {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5vw;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 2vw;
+    text-align: center;
+}
+
+logotext:hover span {
+    display: none
+}
+
+logotext:hover:before{
+    font-family: 'Nanum Gothic', sans-serif;
+    content: "맑아";
+} 
+
+.verticalcenter{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */	
+}

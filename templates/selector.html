@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malga</title>
+    <link type="text/css" rel="stylesheet" href="/static/landing.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<header id='mainHeader'>
+    <div id='responsiveLogo'>
+        <img src='/static/img/malgalogo.PNG' />
+    </div>
+</header>
+
+<body>
+    <!-- <form class="verticalcenter" action="/kiosk" method="GET">
+        
+    </form> -->
+    <form class="verticalcenter">
+        <div class="entry">
+            <input type="text" name="cityID" placeholder="enter city name" autocomplete="off" required>
+        </div>
+        <input class="button" type="submit" value="kiosk" style="float:left; width:24.5vw;" formaction="/kiosk" method="GET"></button>
+        <input class="button" type="submit" value="bedside" style="float:right; width:24.5vw;" formaction="/stand"></button>
+    </form>
+    
+</body>
+<footer>
+    <p style="margin: 0;">author: f0ur3y3s</p>
+    <a style="margin: 0;" href="https://github.com/incub4t0r/flaskweather">source/github</a>
+</footer>
+</html>
