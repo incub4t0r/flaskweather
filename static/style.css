@@ -57,6 +57,7 @@ img {
   float: left;
   width: 50%;
   text-align: center;
+
 }
 
 .right {
@@ -75,7 +76,8 @@ img {
 
 .top {
   /* background-color: lightskyblue; */
-  width: 100%;
+  /* width: 100%; */
+  width:100%;
   text-align: center;
 }
 
