@@ -4,32 +4,157 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>malga</title>
-    <link type="text/css" rel="stylesheet" href="/static/landing.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
 </head>
-<header id='mainHeader'>
-    <div id='responsiveLogo'>
-        <img src='/static/img/malgalogo.PNG' />
-    </div>
-</header>
+
+<style>
+    body{
+        height:100vh;
+        width:100vw;
+        background-color: black;
+    }
+    .container{
+        height:100%;
+        width:100%;
+    }
+    .d-flex form{
+        flex-grow: 1;
+    }
+    /* body{
+        background-color: black;
+    } */
+    .sidebyside{
+        /* width: 80%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* .button{
+        background-color: #1CB0F6;
+        box-shadow: 0 5px 0 #2B70C9;
+        user-select: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px;
+        width: calc((100vw/3));
+        text-align: center;
+        transition: 0.2s;
+    }
+    .button:active{
+        transform: translateY(5px);
+        box-shadow: none;
+    } */
+
+    .button-left{
+        color: black;
+        background-color: #1CB0F6;
+        box-shadow: 0 5px 0 #2B70C9;
+        user-select: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 0 5px 0 0 ;
+        width: calc((100vw/3));
+        text-align: center;
+        transition: 0.2s;
+        border: none;
+    }
+    .button-left:active{
+        transform: translateY(5px);
+        box-shadow: none;
+    }
+    .button-middle{
+        color: black;
+        background-color: #1CB0F6;
+        box-shadow: 0 5px 0 #2B70C9;
+        user-select: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 0 5px 0 5px ;
+        width: calc((100vw/3));
+        text-align: center;
+        transition: 0.2s;
+        border: none;
+    }
+    .button-middle:active{
+        transform: translateY(5px);
+        box-shadow: none;
+    }
+    .button-right{
+        color: black;
+        background-color: #1CB0F6;
+        box-shadow: 0 5px 0 #2B70C9;
+        user-select: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 0 0 0 5px ;
+        width: calc((100vw/3));
+        text-align: center;
+        transition: 0.2s;
+        border: none;
+    }
+    .button-right:active{
+        transform: translateY(5px);
+        box-shadow: none;
+    }
+
+    .custom-input{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    form{
+        width: 80%;
+    }
+    footer{
+        color: white;
+    }
+    .responsive-logo{
+        align-items:center;
+        justify-content: center;
+        size: 10vw;
+    }
+
+</style>
 
 <body>
-    <!-- <form class="verticalcenter" action="/kiosk" method="GET">
-        
-    </form> -->
-    <form class="verticalcenter">
-        <div class="entry">
-            <input type="text" name="cityID" placeholder="enter city name" autocomplete="off" required>
-        </div>
-        <input class="button" type="submit" value="kiosk" style="float:left; width:24.5vw;" formaction="/kiosk" method="GET"></button>
-        <input class="button" type="submit" value="bedside" style="float:right; width:24.5vw;" formaction="/stand"></button>
-    </form>
     
+    <div class="container d-flex align-items-center justify-content-center">
+        <nav class="header sticky-top align-items-center" style="position:fixed;">
+            <img src="/static/img/malgalogo.PNG" alt="malga logo" class="img-fluid">
+
+            <!-- <img src="/static/img/malgalogo.PNG" alt="malga logo" class="responsive-logo"> -->
+        </nav>
+        <form>
+            <input name="cityID" class="form-control form-control-lg custom-input" required=True placeholder="enter city name" autocomplete="off">
+            <br>
+            <style>
+
+            </style>
+            <div class="sidebyside">
+                <button class="button-left" type="submit" formaction="/kiosk" method="GET">
+                    kiosk
+                </button>
+                <button class="button-middle" type="submit" formaction="/stack" method="GET">
+                    stack
+                </button>
+                <button class="button-right" type="submit" formaction="/stand" method="GET">
+                    bedside
+                </button>
+            </div>
+        </form> 
+        <footer style="bottom:0; position:absolute; text-align:center;">
+            <h2 style="margin: 0;">author: f0ur3y3s</h2>
+            <h2><a style="margin: 0;" href="https://github.com/incub4t0r/flaskweather">source/github</a></h2>
+        </footer>
+    </div>
+   
 </body>
-<footer>
-    <p style="margin: 0;">author: f0ur3y3s</p>
-    <a style="margin: 0;" href="https://github.com/incub4t0r/flaskweather">source/github</a>
-</footer>
 </html>
