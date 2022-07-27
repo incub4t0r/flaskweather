@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <!-- <link type="text/css" rel="stylesheet" href="/static/landing.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        height:100vh;
+        width:100vw;
+        background-color: black;
+    }
+    .container{
+        height:100%;
+        width:100%;
+    }
+    .d-flex form{
+        flex-grow: 1;
+    }
+    /* button{
+        display: inline-block;
+    } */
+    .btn-group {
+    width: 100%;
+    }
+
+    .btn-group .btn {
+        width: 50%;
+        background-color: white;
+        /* color: white; */
+    }
+
+    footer{
+        color: white;
+    }
+    
+</style>
+<body>
+    <div class="container d-flex align-items-center justify-content-center">
+        <nav class="header sticky-top align-items-center" style="position:fixed;">
+            <img src="/static/img/malgalogo.PNG" alt="malga logo">
+        </nav>
+        <form>
+            <!-- <div class="form-floating"> -->
+            <input name="cityID" class="form-control form-control-lg" required=True placeholder="enter city name" autocomplete="off">
+                <!-- <label for="floatingInput">enter city name</label> -->
+            <br>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-lg border-dark border-5" formaction="/kiosk" method="GET">kiosk</button>
+                <button type="submit" class="btn btn-lg border-dark border-5" formaction="/stand" method="GET">bedside</button>
+            </div>
+            <!-- <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary btn-md" type="submit" formaction="/kiosk" method="GET">kiosk</button>
+                    <button class="btn btn-primary btn-md" type="submit" formaction="/stand" method="GET">bedside</button>
+                </div>
+            </div> -->
+        </form>    
+        <footer style="bottom:0; position:absolute; text-align:center;">
+            <h2 style="margin: 0;">author: f0ur3y3s</h2>
+            <h2><a style="margin: 0;" href="https://github.com/incub4t0r/flaskweather">source/github</a></h2>
+        </footer>
+    </div>
+</body>
+</html>
