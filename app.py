@@ -3,13 +3,6 @@ from flask import Flask, render_template, request, jsonify, url_for, redirect
 DEV = True
 app = Flask(__name__)
 
-# @app.route('/', methods=['GET','POST'])
-# def landing():
-#     if request.method == 'POST':
-#         cityID = str(request.form.get('cityID')).replace(" ","+")
-#         return redirect(url_for('kiosk', cityID=cityID))
-#     return render_template('landing.html')
-
 @app.route('/')
 def selector():
     return render_template('selector.html')
