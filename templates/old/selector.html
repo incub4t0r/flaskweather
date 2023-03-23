@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/selectorstyles.css">
+</head>
+
+<body>
+    
+    <div class="container d-flex align-items-center justify-content-center">
+        <nav class="header sticky-top align-items-center" style="position:fixed;">
+            <img src="/static/img/malgalogo.PNG" alt="malga logo" class="img-fluid">
+
+            <!-- <img src="/static/img/malgalogo.PNG" alt="malga logo" class="responsive-logo"> -->
+        </nav>
+        <form>
+            <input name="cityID" class="form-control form-control-lg custom-input" required=True placeholder="enter city name" autocomplete="off">
+            <br>
+            <style>
+
+            </style>
+            <div class="sidebyside">
+                <button class="button-left" type="submit" formaction="/kiosk" method="GET">
+                    kiosk
+                </button>
+                <button class="button-middle" type="submit" formaction="/stack" method="GET">
+                    stack
+                </button>
+                <button class="button-right" type="submit" formaction="/stand" method="GET">
+                    bedside
+                </button>
+            </div>
+        </form> 
+        <footer style="bottom:0; position:absolute; text-align:center;">
+            <h2 style="margin: 0;">author: f0ur3y3s</h2>
+            <h2><a style="margin: 0;" href="https://github.com/incub4t0r/malga">about</a></h2>
+        </footer>
+    </div>
+   
+</body>
+</html>
