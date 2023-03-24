@@ -1,17 +1,16 @@
 $(window).on('load', function() {
-    // check if backdrop is set
+    $('html').addClass('hidden');
     if (localStorage.getItem("backdrop_url") === null) {
         reset_backdrop();
-        console.log("resetting backdrop...");
     } else {
         var backdrop = $('body');
         backdrop.css({'background':"url(" + localStorage.getItem("backdrop_url") + ") no-repeat center center fixed", "background-size":"cover"});
     }
-});
+    $(document).ready(function() {  
+        $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
 
-if (localStorage.getItem("backdrop_url") === null) {
-    reset_backdrop();
-}
+    });
+});
 
 function set_backdrop() {
     event.preventDefault();
@@ -23,7 +22,17 @@ function set_backdrop() {
     $("#custom_backdrop").val('');
 }
 
-function reset_backdrop() {
+function reset_backdrop(){
+    try {
+        localStorage.setItem("backdrop_url", "../static/img/blob-scene-haikei-sunset.svg");
+        var backdrop = $('body');
+        backdrop.css({'background':"url(../static/img/blob-scene-haikei-sunset.svg) no-repeat center center fixed", "background-size":"cover"});
+    } catch (error) {
+        console.log("error: " + error);
+    }
+}
+
+function swal_confirm() {
     event.preventDefault();
     swal({
         title: "Are you sure?",
@@ -32,13 +41,7 @@ function reset_backdrop() {
         dangerMode: true,
     }).then((willDelete) => {
         if (willDelete) {
-            try {
-                localStorage.setItem("backdrop_url", "../static/img/blob-scene-haikei-sunset.svg");
-                var backdrop = $('body');
-                backdrop.css({'background':"url(../static/img/blob-scene-haikei-sunset.svg) no-repeat center center fixed", "background-size":"cover"});
-            } catch (error) {
-                console.log("error: " + error);
-            }
+            reset_backdrop();
             swal("Poof! Your backdrop has been reset.", {
                 icon: "success",
             });
