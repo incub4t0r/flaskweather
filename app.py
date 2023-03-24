@@ -8,21 +8,14 @@ day_map = {}
 night_map = {}
 
 def preprocess():
+    global day_map, night_map
     with open(os.path.join(ROOT, 'preprocess', 'day_map.txt')) as f:
         content = f.readlines()
-    content = [x.strip() for x in content]
-    for line in content:
-        key, value = line.split("=")
-        day_map[key] = value
-    print(day_map)
+    day_map = {x.strip().split("=")[0]: x.strip().split("=")[1] for x in content}
 
     with open(os.path.join(ROOT, 'preprocess', 'night_map.txt')) as f:
         content = f.readlines()
-    content = [x.strip() for x in content]
-    for line in content:
-        key, value = line.split("=")
-        night_map[key] = value
-    print(night_map)
+    night_map = {x.strip().split("=")[0]: x.strip().split("=")[1] for x in content}
 
 @app.route('/')
 def selector():
@@ -33,15 +26,15 @@ def kiosk():
     cityID = request.args.get('cityID', None)
     return render_template('kiosk.html', cityID=cityID)
 
-@app.route('/stand')
-def stand():
-    cityID = request.args.get('cityID', None)
-    return render_template('stand.html', cityID=cityID)
+# @app.route('/stand')
+# def stand():
+#     cityID = request.args.get('cityID', None)
+#     return render_template('stand.html', cityID=cityID)
 
-@app.route('/stack')
-def stack():
-    cityID = request.args.get('cityID', None)
-    return render_template('stack.html', cityID=cityID)
+# @app.route('/stack')
+# def stack():
+#     cityID = request.args.get('cityID', None)
+#     return render_template('stack.html', cityID=cityID)
 
 
 @app.route('/icon', methods=["GET"])
@@ -52,15 +45,14 @@ def icon():
     response_icon = 'climacon-'
     # check if the icon is in the day or night map
     try:
-        if req_time == 'day':
-            if req_icon in day_map:
-                response_icon += day_map[req_icon]
-        elif req_time == 'night':
-            if req_icon in night_map:
-                response_icon += night_map[req_icon]
-    except:
+        if req_time == 'day' and req_icon in day_map:
+            response_icon += day_map[req_icon]
+        elif req_time == 'night' and req_icon in night_map:
+            response_icon += night_map[req_icon]
+    except Exception as e:
+        print(e)
         response_icon = "climacon"
-    print(response_icon)
+    # print(response_icon)
     return jsonify({'icon': response_icon })
 
 

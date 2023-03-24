@@ -1,24 +1,23 @@
-var tday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-var tmonth = ["Jan.","Feb.","Mar.","Apr.","May.","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."];
-function clock(){
-    var d = new Date();
-    var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
-    var nhour=d.getHours(),nmin=d.getMinutes(), ap;
+var interval = 1000; // ms
+var expected = Date.now() + interval;
+var day, monthyear, time;
+setTimeout(step, interval);
+function step() {
+    var dt = Date.now() - expected; // the drift (positive for overshooting)
+    if (dt > interval) { // something really bad happened. Maybe the browser (tab) was inactive?
+        console.log("Reloading page, drift is too high");
+        window.location.reload();
+    }
+    fulldate = dayjs(); // set day, monthyear, and time from dayjs
+    day = fulldate.format('dddd');
+    monthyear = fulldate.format('MMM YYYY');
+    time = fulldate.format('h:mm');
+    document.getElementById("day").innerHTML = day;
+    document.getElementById("monthyear").innerHTML = monthyear;
+    document.getElementById("time").innerHTML = time;
 
-    if(nhour == 0){ap = " AM";nhour = 12;}
-    else if(nhour < 12){ap = " AM";}
-    else if(nhour == 12){ap = " PM";}
-    else if(nhour > 12){ap = " PM";nhour -= 12;}
-
-    if(nmin<=9){nmin = "0"+nmin};
-
-    var timetext = ""+nhour+":"+nmin+"";
-    var datetext = ""+tmonth[nmonth]+" "+ndate+"";
-    var daytext = ""+tday[nday]+"";
-
-    document.getElementById('timebox').innerHTML = timetext;
-    document.getElementById('daybox').innerHTML=daytext;
-    document.getElementById('datebox').innerHTML=datetext;
+    expected += interval;
+    setTimeout(step, Math.max(0, interval - dt)); // take into account drift
 }
-clock();
-setInterval(clock,1000);
+
+// https://stackoverflow.com/questions/29971898/how-to-create-an-accurate-timer-in-javascript

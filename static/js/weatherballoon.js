@@ -6,24 +6,41 @@ window.onload = function() {
     // Parameters: newDay = boolean to update the data accordingly with new mins and max. true or false.
     function getMainWeather(newDay) {
         const api_url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityID + '&appid=' + owmkey + '&units=imperial';
-
         console.log(newDay ? "getting main weather, setting high and low" : "getting main weather only");
 
         $.getJSON(api_url, data => {
             const temp = Math.round(parseFloat(data.main.temp));
             const weatherID = data.weather[0].id;
-            // const weatherIcon = document.getElementById("curr-weather-icon");
-            document.getElementById('tempmain').innerHTML = temp + '&deg;';
-            // weatherIcon.setAttribute("class", "wi wi-owm-" + isDayOrNight(data) + "-" + weatherID);
-            getAnimatedWeatherIcon(weatherID, isDayOrNight(data));
+            $('#tempmain').html(temp + '&deg;');
+            // document.getElementById('tempmain').innerHTML = temp + '&deg;';
+            getIconName(weatherID, isDayOrNight(data));
             if (newDay) {
-                document.getElementById('tempmin').innerHTML = Math.round(data.main.temp_min) + '&deg;';
-                document.getElementById('tempmax').innerHTML = Math.round(data.main.temp_max) + '&deg;';
+                $('#tempmin').html(Math.round(data.main.temp_min) + '&deg;');
+                $('#tempmax').html(Math.round(data.main.temp_max) + '&deg;');
+                // document.getElementById('tempmin').innerHTML = Math.round(data.main.temp_min) + '&deg;';
+                // document.getElementById('tempmax').innerHTML = Math.round(data.main.temp_max) + '&deg;';
             }
         });
     }
 
-    function getAnimatedWeatherIcon(req_icon, req_icon_time){
+    // Function to retrieve the correct icon from the server
+    function getIcon(icon) {
+        $.ajax({
+            url: "/static/icons/" + icon + ".svg",
+            type: "GET",
+            dataType: "html",
+            success: function(data, status){
+                $("#curr-weather-icon").html(data);
+            },
+            error: function(data, status){
+                console.log("error");
+                window.location.reload(); // reload the page if the icon is not found
+            }
+        });
+    }
+
+    // Function to retrieve the correct icon name from the server
+    function getIconName(req_icon, req_icon_time){
         $.ajax({
             url: "/icon",
             type:"GET",
@@ -33,20 +50,11 @@ window.onload = function() {
             },
             success: function(data, status){
                 icon = data.icon;
-                $.ajax({
-                    url: "/static/icons/" + icon + ".svg",
-                    type: "GET",
-                    dataType: "html",
-                    success: function(data, status){
-                        $("#curr-weather-icon").html(data);
-                    },
-                    error: function(data, status){
-                        console.log("error");
-                    }
-                });
+                getIcon(icon);
             },
             error: function(data, status){
                 console.log("error, no such icon found, default was not found either");
+                window.location.reload();
             }
         })
     }
@@ -56,7 +64,6 @@ window.onload = function() {
         const currTime = currDate.getTime();
         const sunriseTime = data.sys.sunrise * 1000;
         const sunsetTime = data.sys.sunset * 1000;
-
         return (currTime >= sunriseTime && currTime < sunsetTime) ? "day" : "night";
     }
 
@@ -68,14 +75,9 @@ window.onload = function() {
         i.src = 'https://www.google.com/images/nav_logo242.png?d=' + encodeURIComponent(Date());
     }
 
-    // Fill in min and max temps on first load
-    checkNetConn(true);
-
-    // Set intervals to run the network check function every hour.
-    setInterval(() => checkNetConn(false), 1000 * 60 * 60);
-
-    // Check if midnight every 30 minutes (need to improve this)
-    setInterval(() => {
+    checkNetConn(true); // Fill in min and max temps on first load
+    setInterval(() => checkNetConn(false), 1000 * 60 * 60); // Set intervals to run the network check function every hour.
+    setInterval(() => { // Check if midnight every 30 minutes (need to improve this)
         console.log("checking if midnight");
         const date = new Date();
         if (date.getHours() == 0) checkNetConn(true);

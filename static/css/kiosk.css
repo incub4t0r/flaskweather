@@ -1,3 +1,14 @@
+html {
+    font-size: 10px;
+}
+@media (min-width: 992px) {
+    html {font-size: 12px;}
+}
+
+@media (min-width: 1400px) {
+    html {font-size: 16px;}
+}
+
 .time {
     font-family: 'Rubik', sans-serif;
     font-weight: 300;
@@ -19,8 +30,8 @@
 svg {
     -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
     filter: invert(100%);
-    width: 100px;
-    height: 100px;
+    width: 11rem;
+    height: 11rem;
 }
 
 /* .card {
