@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../static/css/selector.css">
-    <meta name="theme-color" content="#1f1f1f" /></head>
+    <meta name="theme-color" content="#1f1f1f"/></head>
 <body>
     <header class="fixed-top mt-4">
         <div class="container">
@@ -68,7 +68,7 @@
                                     <div id="flush-collapseCustomBackdrop" class="accordion-collapse collapse" aria-labelledby="flush-headingCustomBackdrop"
                                         data-bs-parent="#accordionCustomBackdrop">
                                         <!-- <div class="accordion-body"> -->
-                                            <div class="d-flex column-gap-3">
+                                            <div class="d-flex column-gap-3 my-4">
                                                 <form class="input-group form-floating" onsubmit="set_backdrop()">
                                                     <input id="custom_backdrop" class="form-control custom-input" required=True placeholder="enter image url for custom backdrop" autocomplete="off" aria-describedby="button-addon" type="url" >
                                                     <label for="custom_backdrop">enter image url for custom backdrop</label>
@@ -81,6 +81,10 @@
                                                         reset
                                                     </button>
                                                 </form>
+                                            </div>
+                                            <div class="input-group custom-file-button">
+                                                <label class="input-group-text" for="fileInput">Upload backdrop</label>
+                                                <input type="file" class="form-control custom-input" id="fileInput">
                                             </div>
                                         <!-- </div> -->
                                     </div>

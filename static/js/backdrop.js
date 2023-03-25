@@ -8,7 +8,21 @@ $(window).on('load', function() {
     }
     $(document).ready(function() {  
         $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-
+    });
+    $('#fileInput').on('change', function selectedFileChanged() {
+        if (this.files.length === 0) {
+            console.log('No file selected.');
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = function fileReadCompleted() {
+            // document.body.style.background = "url(" + reader.result + ") no-repeat center center fixed";
+            // document.body.style.backgroundSize = "cover";
+            var body = $('body');
+            body.css({'background':"url(" + reader.result + ") no-repeat center center fixed", "background-size":"cover"});
+            localStorage.setItem("backdrop_url", reader.result);
+        };
+        reader.readAsDataURL(this.files[0]);
     });
 });
 
