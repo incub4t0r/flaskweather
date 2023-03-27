@@ -10,7 +10,7 @@ function step() {
     }
     fulldate = dayjs(); // set day, monthyear, and time from dayjs
     day = fulldate.format('dddd');
-    monthyear = fulldate.format('MMM YYYY');
+    monthyear = fulldate.format('MMM. D');
     time = fulldate.format('h:mm');
     document.getElementById("day").innerHTML = day;
     document.getElementById("monthyear").innerHTML = monthyear;
