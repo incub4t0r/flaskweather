@@ -41,7 +41,7 @@
                                 <input id="cityID" name="cityID" class="form-control form-control-lg custom-input" required=True placeholder="enter city name" autocomplete="off">
                                 <label for="cityID">enter city name</label>
                                 <button class="btn btn-custom" type="submit">
-                                    Let's Go!
+                                    let's go!
                                 </button>
                             </form>
                             
@@ -70,20 +70,22 @@
                                         <!-- <div class="accordion-body"> -->
                                             <div class="d-flex column-gap-3 my-4">
                                                 <form class="input-group form-floating" onsubmit="set_backdrop()">
-                                                    <input id="custom_backdrop" class="form-control custom-input" required=True placeholder="enter image url for custom backdrop" autocomplete="off" aria-describedby="button-addon" type="url" >
-                                                    <label for="custom_backdrop">enter image url for custom backdrop</label>
+                                                    <input id="custom_backdrop" class="form-control custom-input" required=True placeholder="enter image url for custom backdrop" autocomplete="off" aria-describedby="button-addon">
+                                                    <!-- <input id="custom_backdrop" class="form-control custom-input" required=True placeholder="enter image url for custom backdrop" autocomplete="off" aria-describedby="button-addon" type="url" > -->
+                                                    <label for="custom_backdrop">enter url or hex value for custom backdrop</label>
                                                     <button class="btn btn-custom" type="submit" id="button-addon">
                                                         set
                                                     </button>
                                                 </form>
-                                                <form onsubmit="reset_backdrop()" class="">
+                                                <!-- <form onsubmit="swal_reset_backdrop()"> -->
+                                                <form onsubmit="set_backdrop_black()" class="">
                                                     <button class="btn btn-danger h-100" type="submit">
                                                         reset
                                                     </button>
                                                 </form>
                                             </div>
                                             <div class="input-group custom-file-button">
-                                                <label class="input-group-text" for="fileInput">Upload backdrop</label>
+                                                <label class="input-group-text" for="fileInput">upload backdrop</label>
                                                 <input type="file" class="form-control custom-input" id="fileInput" accept="image/*">
                                             </div>
                                         <!-- </div> -->

@@ -10,12 +10,12 @@ header {
 }
 
 body {
-    /* -webkit-transition: background-color 2s ease-in-out;
+    /* -webkit-transition: background-color 2s ease±-in-out;
     transition: background-color 2s ease-in-out; */
     overflow: scroll;
     margin: 0;
-    background-color: #1f1f1f;
-    background: url("../img/blob-scene-haikei-sunset.svg") no-repeat center center fixed;
+    /* background-color: #1f1f1f; */
+    /* background: url("../img/blob-scene-haikei-sunset.svg") no-repeat center center fixed; */
     /* background: url("../img/clay-banks-u27Rrbs9Dwc-unsplash.jpg"); */
     /* background: url("../img/thanos-pal-vb-hPUzfpBo-unsplash.jpg"); */
     background-size: cover;
